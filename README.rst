@@ -1,10 +1,10 @@
 fastapi-base
 ============
 
-setup local dev
+Setup local dev
 ---------------
 
-.. code-block::
+.. code-block:: bash
 
     # create virtualenv / install required pkg
     python3 -m venv .venv
@@ -14,9 +14,33 @@ setup local dev
     .venv/bin/pip install -e .\[dev\] --extra-index-url https://pypi.org/simple
 
 
-Running Integration Testing by docker-compose
----------------------------------------------
+Run tests by docker-compose
+---------------------------
 
-.. code-block::
+.. code-block:: bash
 
     make build-and-test
+
+
+HTTP Example API: Build / Run Image for Local testing
+--------------------------------------------------
+
+.. code-block:: bash
+
+    docker compose -f ci-cd/development/docker-compose.example_api.yaml up \
+        --remove-orphans --build --force-recreate
+
+    # check
+    http://127.0.0.1:8080/example/docs
+
+
+HTTP Example API: Run without Container
+-----------------------------------------------------
+
+.. code-block:: bash
+
+    export PATH_PREFIX="/example"
+    uvicorn example_api.main:app --reload --port=8080
+
+    # API docs
+    http://127.0.0.1:8080/example/docs

@@ -15,7 +15,7 @@ from example_api.config import (
     HEALTH_INFO,
     PATH_PREFIX,
 )
-from example_api.routers.router_remote_cache_v1 import app as remote_cache_v1
+from example_api.routers.router_selfex_cache_v1 import app as selfex_cache_v1
 
 
 LOGGER = logging.getLogger(__name__)
@@ -30,7 +30,7 @@ app = FastAPI(
     openapi_url=ABOUT_SERVICE["openapi_url"],
 )
 app.include_router(
-    remote_cache_v1, prefix=f"{PATH_PREFIX}/v1", tags=["Remote Self Expire Cache"]
+    selfex_cache_v1, prefix=f"{PATH_PREFIX}/v1", tags=["Self Expire Cache"]
 )
 
 

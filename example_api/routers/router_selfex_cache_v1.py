@@ -29,7 +29,7 @@ async def on_shutdown() -> None:
 
 
 # @app.get("/website/", response_model=WebsiteQueryResponse)
-@app.get("/remote_cache/")
+@app.get("/selfex_cache/")
 async def get_websites_by_keywords():
     tic = time.perf_counter()
     try:
