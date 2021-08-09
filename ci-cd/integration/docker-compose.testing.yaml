@@ -1,0 +1,11 @@
+version: "2.3"
+services:
+  fastapi-base-test-dev:
+    image: fastapi-base:dev
+    build:
+      context: ../../ # set context as repository directory
+      dockerfile: ./ci-cd/integration/dockerfile
+    environment:
+      # https://docs.python.org/3/library/devmode.html#devmode
+      - PYTHONMALLOC=debug
+      - PYTHONASYNCIODEBUG=1

@@ -1,0 +1,11 @@
+version: "2.3"
+services:
+  fastapi-base-example-api:
+    image: fastapi-base-example-api:dev
+    environment:
+      - PATH_PREFIX=/example
+    ports:
+      - "8080:8080"
+    build:
+      context: ../../ # set context as repository directory
+      dockerfile: ./ci-cd/development/example_api.dockerfile

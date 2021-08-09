@@ -1,0 +1,6 @@
+version: "2.3"
+services:
+  fastapi-base-test-dev:
+    extends:
+      file: docker-compose.testing.yaml
+      service: fastapi-base-test-dev
