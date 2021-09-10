@@ -30,7 +30,7 @@ HTTP Example API: Build / Run Image for Local testing
     docker compose -f ci-cd/development/docker-compose.example_api.yaml up \
         --remove-orphans --build --force-recreate
 
-    # check
+    # Check API docs
     http://127.0.0.1:8080/example/docs
 
 
@@ -42,5 +42,5 @@ HTTP Example API: Run without Container
     export PATH_PREFIX="/example"
     uvicorn example_api.main:app --reload --port=8080
 
-    # API docs
+    # Check API docs
     http://127.0.0.1:8080/example/docs

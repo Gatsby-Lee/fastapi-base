@@ -16,7 +16,7 @@ ifeq ($(ENVIRONMENT),DEV_TESTING)
 else
 # On dev-local, bring containers up and apply only code changes without reinstalling pip packages
 	docker-compose -f ci-cd/integration/docker-compose.local.yaml up \
-		--build --detach --force-recreate
+		--remove-orphans --build --detach --force-recreate
 endif
 
 run-tests:
